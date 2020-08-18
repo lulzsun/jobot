@@ -10,6 +10,8 @@ import random
 import json
 
 # global vars
+thread_id = "<thread id>"
+thread_type = ThreadType.GROUP
 botAdmin_id = "<admin id>"
 generalRecords = {}
 poopRecords = {}
@@ -32,8 +34,7 @@ def init():
     with open('session.json', 'w') as f:
         json.dump(client.getSession(), f)
 
-    thread_id = "518314794987940"
-    thread_type = ThreadType.GROUP
+    thread_id = "<thread id>"
     readRecords("general_records.txt", generalRecords)
     readRecords("poop_records.txt", poopRecords)
     readRecords("points_records.txt", pointsRecords)
@@ -311,10 +312,6 @@ except:
 
 # Attempt a login with the session, and if it fails, just use the email & password
 client = CustomClient("<email>", "<password>", session_cookies=cookies)
-
-# ... Do stuff with the client here
-thread_id = "<id>"
-thread_type = ThreadType.GROUP
 init()
 
 # Save the session again
